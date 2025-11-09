@@ -5,54 +5,41 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kevin & Hannah — Save The Date</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
-    html {
-      scroll-behavior: smooth;
-      overflow: hidden; /* kunci scroll manual di awal */
-    }
-
-    body {
+    html, body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      overflow: hidden;
       background: #1a1a1a;
       color: #fff;
+      font-family: 'Poppins', sans-serif;
     }
 
-    /* COVER */
     .cover {
-      height: 100vh;
+      height: 100dvh;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
+      padding: 8vh 0 5vh;
       text-align: center;
-      position: relative;
+      box-sizing: border-box;
     }
 
-    /* Nama vertikal di tengah */
     .names {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%) rotate(-90deg);
+      transform: rotate(-90deg);
       font-family: 'Great Vibes', cursive;
-      font-size: 2rem;
-      font-weight: normal;
+      font-size: 2.2rem;
       color: #ffffffcc;
       letter-spacing: 2px;
-      white-space: nowrap;
     }
 
-    /* Info di bawah */
     .info {
-      position: absolute;
-      bottom: 14%;
-      width: 100%;
       text-align: center;
       letter-spacing: 3px;
+      margin-bottom: 2rem;
     }
 
     .info .date {
@@ -63,30 +50,20 @@
     }
 
     .arrow {
-      position: absolute;
-      bottom: 40px;
       font-size: 2rem;
       color: #fff;
       text-decoration: none;
       animation: bounce 1.5s infinite;
+      margin-bottom: 1rem;
     }
 
     @keyframes bounce {
       0%,100% { transform: translateY(0); }
       50% { transform: translateY(10px); }
     }
-
-    /* DETAIL SECTION */
-    #detail {
-      min-height: 100vh;
-      padding: 3rem;
-      background: #f6f3ee;
-      color: #222;
-    }
   </style>
 </head>
 <body>
-  <!-- COVER -->
   <section class="cover">
     <div class="names">kevin & hannah</div>
 
@@ -96,24 +73,8 @@
       <div>BYRON BAY, NSW</div>
     </div>
 
-    <a href="#detail" class="arrow" id="arrow">↓</a>
+    <!-- arahkan ke halaman utama -->
+    <a href="main.html" class="arrow">↓</a>
   </section>
-
-  <!-- DETAIL -->
-  <section id="detail">
-    <h2>Detail Acara</h2>
-    <p>Lokasi: Gereja St. Mary</p>
-    <p>Waktu: 10.00 WIB</p>
-    <p><strong>RSVP</strong>: <a href="https://forms.gle/..." target="_blank">Isi form</a></p>
-  </section>
-
-  <script>
-    // Saat panah diklik, izinkan scroll dan pindah halus ke detail
-    document.getElementById('arrow').addEventListener('click', function(e) {
-      e.preventDefault();
-      document.documentElement.style.overflow = 'auto'; // izinkan scroll
-      document.getElementById('detail').scrollIntoView({ behavior: 'smooth' });
-    });
-  </script>
 </body>
 </html>
